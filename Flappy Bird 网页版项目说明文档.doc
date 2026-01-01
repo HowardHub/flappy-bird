@@ -1,0 +1,127 @@
+<root id="root_1"><article ag_component="" id="article_2"><ag-fullwidth id="ag-fullwidth_3" class="bg-slate-900 px-10 pt-14 pb-14 text-center min-h-[200px]" image="KeiObxgP0om9nzxU1mdlMjhMgRg"><ag-fullwidth-item class="text-center flow-root max-w-[834px] mx-auto" id="ag-fullwidth-item_4"><ag-text id="ag-text_5" class="text-[34px] leading-[48px] text-center"><b id="b_7">Flappy Bird AI 进化版</b></ag-text><ag-text id="ag-text_8" class="text-[20px] leading-[28px] font-normal text-center"><span style="color: rgb(226, 232, 240)" id="span_9">基于 React 19 + Neuroevolution 的智能体训练系统</span></ag-text></ag-fullwidth-item></ag-fullwidth><ag-h id="ag-h_10" level="1" seq="auto">项目概述</ag-h><ag-text id="ag-text_170_0">本项目在经典 Flappy Bird 的基础上，集成了基于 <b class="text-sky-600" id="b_171_0">Neuroevolution (神经进化)</b> 算法的 AI 训练系统。除了保留 <b class="text-orange-600" id="b_172_0">HTML5 Canvas</b> 高性能矢量渲染与 <b class="text-purple-600" id="b_173_0">Web Audio API</b> 合成音效外，还新增了 AI 自动驾驶（Autopilot）与可视化训练实验室功能，支持让计算机从零开始学习玩游戏。</ag-text><ag-text id="ag-text_174_0">核心特色包括：</ag-text><ag-column width-ratio="1" id="ag-column_170_0">
+  <ag-column-item width-ratio="0.33" id="ag-column-item_171_0">
+    <ag-card class="px-5 py-6 bg-slate-50 rounded-lg h-full" id="ag-card_172_0">
+      <ag-h level="3" id="ag-h_173_0">🧠 AI 神经进化</ag-h>
+      <ag-text id="ag-text_175_0">内置遗传算法引擎，支持种群进化、变异与优胜劣汰，实时可视化神经网络决策过程。</ag-text>
+    </ag-card>
+  </ag-column-item>
+  <ag-column-item width-ratio="0.33" id="ag-column-item_176_0">
+    <ag-card class="px-5 py-6 bg-slate-50 rounded-lg h-full" id="ag-card_177_0">
+      <ag-h level="3" id="ag-h_178_0">🎨 全矢量渲染</ag-h>
+      <ag-text id="ag-text_179_0">摒弃位图，小鸟、管道与背景均由 Canvas API 实时绘制，保持极小体积与无限清晰度。</ag-text>
+    </ag-card>
+  </ag-column-item>
+  <ag-column-item width-ratio="0.34" id="ag-column-item_180_0">
+    <ag-card class="px-5 py-6 bg-slate-50 rounded-lg h-full" id="ag-card_181_0">
+      <ag-h level="3" id="ag-h_182_0">🔊 合成音效</ag-h>
+      <ag-text id="ag-text_183_0">使用 Web Audio API 振荡器实时合成跳跃与碰撞音效，零延迟且无需外部音频文件。</ag-text>
+    </ag-card>
+  </ag-column-item>
+</ag-column><ag-h level="1" seq="auto" id="ag-h_184_0">玩法与功能指南</ag-h><ag-text id="ag-text_171_0">游戏提供两种主要模式：<b class="text-gray-800" id="b_174_0">玩家挑战模式</b>与<b class="text-gray-800" id="b_175_0">AI 训练实验室</b>。玩家可以随时介入接管控制权。</ag-text><ag-column width-ratio="1" id="ag-column_171_0">
+    <ag-column-item width-ratio="0.5" id="ag-column-item_172_0">
+      <ag-card class="px-5 py-6 bg-sky-50 rounded-lg h-full" id="ag-card_173_0">
+        <ag-h level="3" id="ag-h_174_0">🎮 玩家操作</ag-h>
+        <ag-bullet id="ag-bullet_175_0">
+          <ag-list-item id="ag-list-item_176_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_177_0"><b id="b_178_0">跳跃 (Jump):</b> 空格键 <ag-code-inline id="ag-code-inline_179_0">Space</ag-code-inline>、<ag-code-inline id="ag-code-inline_180_0">F</ag-code-inline> 键、方向键 <ag-code-inline id="ag-code-inline_181_0">↑</ag-code-inline> 或鼠标点击。</ag-text-inline></ag-list-item>
+          <ag-list-item id="ag-list-item_182_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_183_0"><b id="b_184_0">重开 (Restart):</b> <ag-code-inline id="ag-code-inline_185_0">R</ag-code-inline> 键或点击界面按钮。</ag-text-inline></ag-list-item>
+          <ag-list-item id="ag-list-item_186_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_187_0"><b id="b_188_0">AI 接管 (Autopilot):</b> 按 <ag-code-inline id="ag-code-inline_189_0">A</ag-code-inline> 键开启自动驾驶，AI 将根据当前模型控制小鸟。</ag-text-inline></ag-list-item>
+          <ag-list-item id="ag-list-item_190_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_191_0"><b id="b_192_0">恢复手动 (Manual):</b> 按 <ag-code-inline id="ag-code-inline_193_0">I</ag-code-inline> 键 (Interrupt) 立即中断 AI 并恢复玩家控制。</ag-text-inline></ag-list-item>
+        </ag-bullet>
+      </ag-card>
+    </ag-column-item>
+    <ag-column-item width-ratio="0.5" id="ag-column-item_194_0">
+      <ag-card class="px-5 py-6 bg-purple-50 rounded-lg h-full" id="ag-card_195_0">
+        <ag-h level="3" id="ag-h_196_0">🧠 AI 训练模式</ag-h>
+        <ag-bullet id="ag-bullet_197_0">
+          <ag-list-item id="ag-list-item_198_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_199_0"><b id="b_200_0">开启训练：</b> 点击侧边栏的 &#34;Train AI&#34; 按钮初始化种群。</ag-text-inline></ag-list-item>
+          <ag-list-item id="ag-list-item_201_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_202_0"><b id="b_203_0">极速进化：</b> 开启 &#34;Speed Up&#34; 选项，取消渲染帧率限制，加速遗传迭代。</ag-text-inline></ag-list-item>
+          <ag-list-item id="ag-list-item_204_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_205_0"><b id="b_206_0">保存模型：</b> 停止训练时，系统会自动将表现最好的模型序列化并保存至 <ag-code-inline id="ag-code-inline_207_0">localStorage</ag-code-inline>。</ag-text-inline></ag-list-item>
+        </ag-bullet>
+      </ag-card>
+    </ag-column-item>
+  </ag-column><ag-h level="1" seq="auto" id="ag-h_170_0">AI 引擎实现细节</ag-h>
+  <ag-text id="ag-text_172_0">AI 核心模块基于神经进化（Neuroevolution）算法，结合了神经网络（Neural Network）的决策能力与遗传算法（Genetic Algorithm）的优化策略。</ag-text>
+  
+  <ag-h level="2" id="ag-h_175_0">1. 神经网络架构</ag-h>
+  <ag-text id="ag-text_176_0">每个智能体（Bird）都由一个全连接前馈神经网络控制，网络结构设计如下：</ag-text>
+  <ag-column width-ratio="1" id="ag-column_177_0">
+    <ag-column-item width-ratio="0.5" id="ag-column-item_178_0">
+       <ag-card class="px-5 py-6 bg-slate-50 rounded-lg h-full" id="ag-card_179_0">
+         <ag-h level="3" id="ag-h_180_0">输入层 (Inputs)</ag-h>
+         <ag-bullet id="ag-bullet_181_0">
+           <ag-list-item id="ag-list-item_183_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_184_0"><b id="b_185_0">Vertical Y:</b> 小鸟当前的垂直位置（归一化）。</ag-text-inline></ag-list-item>
+           <ag-list-item id="ag-list-item_187_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_188_0"><b id="b_189_0">Velocity Y:</b> 小鸟当前的垂直速度。</ag-text-inline></ag-list-item>
+           <ag-list-item id="ag-list-item_191_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_192_0"><b id="b_193_0">Pipe Dist X:</b> 与前方最近管道的水平距离。</ag-text-inline></ag-list-item>
+           <ag-list-item id="ag-list-item_194_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_195_0"><b id="b_196_0">Pipe Diff Y:</b> 小鸟高度与管道缺口中心的高度差。</ag-text-inline></ag-list-item>
+         </ag-bullet>
+       </ag-card>
+    </ag-column-item>
+    <ag-column-item width-ratio="0.5" id="ag-column-item_197_0">
+       <ag-card class="px-5 py-6 bg-slate-50 rounded-lg h-full" id="ag-card_198_0">
+         <ag-h level="3" id="ag-h_199_0">隐藏层与输出 (Hidden &amp; Output)</ag-h>
+         <ag-bullet id="ag-bullet_200_0">
+           <ag-list-item id="ag-list-item_202_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_203_0"><b id="b_204_0">隐藏层：</b> 包含 6 个神经元，全连接结构。</ag-text-inline></ag-list-item>
+           <ag-list-item id="ag-list-item_205_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_206_0"><b id="b_207_0">激活函数：</b> 隐藏层使用 ReLU 或 Sigmoid。</ag-text-inline></ag-list-item>
+           <ag-list-item id="ag-list-item_208_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_209_0"><b id="b_210_0">输出层：</b> 1 个神经元。当输出值 &gt; 0.5 时，触发 “跳跃” 指令。</ag-text-inline></ag-list-item>
+         </ag-bullet>
+       </ag-card>
+    </ag-column-item>
+  </ag-column>
+
+  <ag-h level="2" id="ag-h_211_0">2. 遗传进化策略</ag-h>
+  <ag-text id="ag-text_212_0">系统通过模拟自然选择来优化神经网络权重：</ag-text>
+  <ag-bullet id="ag-bullet_213_0">
+    <ag-list-item id="ag-list-item_214_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_215_0"><b id="b_216_0">精英保留 (Elitism):</b> 每代适应度最高的 10% 个体将直接保留至下一代，防止优秀基因丢失。</ag-text-inline></ag-list-item>
+    <ag-list-item id="ag-list-item_217_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_218_0"><b id="b_219_0">动态变异 (Mutation):</b> 剩余个体基于精英父代进行复制，并引入随机高斯噪声作为变异，探索新的策略空间。</ag-text-inline></ag-list-item>
+    <ag-list-item id="ag-list-item_220_0"><ag-text-inline class="inline-item-text" id="ag-text-inline_221_0"><b id="b_222_0">适应度函数 (Fitness):</b> <ag-code-inline id="ag-code-inline_223_0">Fitness = (存活距离 * 1.5) + (穿过管子数量 * 100)</ag-code-inline>。该公式兼顾了生存能力与得分激励。</ag-text-inline></ag-list-item>
+  </ag-bullet><ag-h level="1" seq="auto" id="ag-h_171_0">核心游戏架构</ag-h><ag-text id="ag-text_61">本项目采用了最新的前端生态技术栈，并针对游戏开发场景进行了深度优化。</ag-text><ag-h id="ag-h_62" level="2">1. 技术栈概览</ag-h><ag-text id="ag-text_63">项目基于 Vite 构建，使用了 React 19 的最新特性。UI 组件库采用了 shadcn/ui (基于 Radix UI)，样式方案为 Tailwind CSS v4。</ag-text><ag-table id="ag-table_64"><ag-colgroup id="ag-colgroup_65"><ag-col id="ag-col_66" style="width: 278px"></ag-col><ag-col id="ag-col_67" style="width: 278px"></ag-col><ag-col id="ag-col_68" style="width: 278px"></ag-col></ag-colgroup><ag-thead id="ag-thead_69"><ag-tr id="ag-tr_70"><ag-th id="ag-th_71"><ag-text id="ag-text_72">技术/库</ag-text></ag-th><ag-th id="ag-th_73"><ag-text id="ag-text_74">版本</ag-text></ag-th><ag-th id="ag-th_75"><ag-text id="ag-text_76">用途</ag-text></ag-th></ag-tr></ag-thead><ag-tbody id="ag-tbody_77"><ag-tr id="ag-tr_78"><ag-td id="ag-td_79"><ag-text id="ag-text_80">React</ag-text></ag-td><ag-td id="ag-td_81"><ag-text id="ag-text_82">19.2.0</ag-text></ag-td><ag-td id="ag-td_83"><ag-text id="ag-text_84">UI 构建与组件化架构</ag-text></ag-td></ag-tr><ag-tr id="ag-tr_85"><ag-td id="ag-td_86"><ag-text id="ag-text_87">Vite</ag-text></ag-td><ag-td id="ag-td_88"><ag-text id="ag-text_89">7.2.4</ag-text></ag-td><ag-td id="ag-td_90"><ag-text id="ag-text_91">极速开发服务器与构建工具</ag-text></ag-td></ag-tr><ag-tr id="ag-tr_92"><ag-td id="ag-td_93"><ag-text id="ag-text_94">Tailwind CSS</ag-text></ag-td><ag-td id="ag-td_95"><ag-text id="ag-text_96">4.1.18</ag-text></ag-td><ag-td id="ag-td_97"><ag-text id="ag-text_98">原子化 CSS 样式系统</ag-text></ag-td></ag-tr><ag-tr id="ag-tr_99"><ag-td id="ag-td_100"><ag-text id="ag-text_101">TypeScript</ag-text></ag-td><ag-td id="ag-td_102"><ag-text id="ag-text_103">5.9.3</ag-text></ag-td><ag-td id="ag-td_104"><ag-text id="ag-text_105">静态类型检查与代码健壮性</ag-text></ag-td></ag-tr></ag-tbody></ag-table><ag-h id="ag-h_106" level="2">2. 游戏循环架构 (Fixed Time Step)</ag-h><ag-text id="ag-text_107">为了保证游戏在不同刷新率显示器（60Hz/120Hz/144Hz）上的物理表现一致，核心游戏循环采用了<b id="b_108">固定时间步长（Fixed Time Step）</b>模式。</ag-text><ag-text id="ag-text_109">实现逻辑位于 <ag-code-inline id="ag-code-inline_110">Game.tsx</ag-code-inline> 中。我们使用了 <ag-code-inline id="ag-code-inline_111">requestAnimationFrame</ag-code-inline> 来驱动循环，但物理更新逻辑与渲染逻辑解耦。物理世界以固定的 60FPS（即每 16.67ms 一次）进行模拟，而渲染则尽可能跟随屏幕刷新率。</ag-text><ag-code id="ag-code_112" language="Typescript" caption="Game.tsx 中的游戏循环核心逻辑">
+const loop = useCallback((time: number) =&gt; {
+  if (lastTimeRef.current === 0) {
+    lastTimeRef.current = time;
+  }
+  const deltaTime = time - lastTimeRef.current;
+  lastTimeRef.current = time;
+  
+  accumulatorRef.current += deltaTime;
+  
+  // 防止螺旋死亡（Spiral of Death）：限制最大累积时间
+  if (accumulatorRef.current &gt; 200) accumulatorRef.current = 200;
+
+  // 物理更新：消耗累积时间，以固定步长更新游戏逻辑
+  while (accumulatorRef.current &gt;= FIXED_TIME_STEP) {
+    if (gameState === &#39;PLAYING&#39;) {
+      update();
+    }
+    accumulatorRef.current -= FIXED_TIME_STEP;
+  }
+  
+  // 渲染更新：每帧调用一次
+  const ctx = canvasRef.current?.getContext(&#39;2d&#39;);
+  if (ctx) draw(ctx);
+
+  if (gameState !== &#39;GAME_OVER&#39;) {
+    frameRef.current = requestAnimationFrame(loop);
+  }
+}, [gameState, update, draw, FIXED_TIME_STEP]);
+</ag-code><ag-h id="ag-h_113" level="2">3. React 与 Canvas 的结合</ag-h><ag-text id="ag-text_114">在 React 中开发 Canvas 游戏的一个常见挑战是 React 的响应式更新机制（Re-render）与高频游戏循环（60FPS）的冲突。如果每次帧更新都触发 React 组件重渲染，会导致严重的性能问题。</ag-text><ag-text id="ag-text_115"><b id="b_116">解决方案：Ref 逃生舱</b></ag-text><ag-bullet id="ag-bullet_117"><ag-list-item id="ag-list-item_118"><ag-text-inline class="inline-item-text" id="ag-text-inline_119"><b id="b_120">游戏状态管理：</b> 高频变化的数据（小鸟位置 <ag-code-inline id="ag-code-inline_121">x, y</ag-code-inline>、速度 <ag-code-inline id="ag-code-inline_122">velocity</ag-code-inline>、管道数组 <ag-code-inline id="ag-code-inline_123">pipes[]</ag-code-inline>）全部存储在 <ag-code-inline id="ag-code-inline_124">useRef</ag-code-inline> 中。这确保了数据的即时更新不会触发 React 组件重渲染。</ag-text-inline></ag-list-item><ag-list-item id="ag-list-item_125"><ag-text-inline class="inline-item-text" id="ag-text-inline_126"><b id="b_127">UI 状态管理：</b> 低频变化的数据（分数 <ag-code-inline id="ag-code-inline_128">score</ag-code-inline>、游戏阶段 <ag-code-inline id="ag-code-inline_129">gameState</ag-code-inline>）使用 <ag-code-inline id="ag-code-inline_130">useState</ag-code-inline>，以便 React 能够正确更新界面上的分数板和 UI 覆盖层。</ag-text-inline></ag-list-item></ag-bullet><ag-h id="ag-h_131" level="2">4. 音频系统 (Web Audio API)</ag-h><ag-text id="ag-text_132">音频控制器 <ag-code-inline id="ag-code-inline_133">src/lib/audio.ts</ag-code-inline> 封装了 <ag-code-inline id="ag-code-inline_134">AudioContext</ag-code-inline>。通过创建振荡器节点（OscillatorNode）和增益节点（GainNode），我们实时合成了三种不同的音效：</ag-text><ag-bullet id="ag-bullet_135"><ag-list-item id="ag-list-item_136"><ag-text-inline class="inline-item-text" id="ag-text-inline_137"><b id="b_138">跳跃 (Jump)：</b> 使用 <ag-code-inline id="ag-code-inline_139">sine</ag-code-inline>（正弦波），频率从 350Hz 快速滑向 600Hz，模拟卡通跳跃感。</ag-text-inline></ag-list-item><ag-list-item id="ag-list-item_140"><ag-text-inline class="inline-item-text" id="ag-text-inline_141"><b id="b_142">得分 (Score)：</b> 使用 <ag-code-inline id="ag-code-inline_143">square</ag-code-inline>（方波），产生类似 8-bit 游戏机的高频提示音。</ag-text-inline></ag-list-item><ag-list-item id="ag-list-item_144"><ag-text-inline class="inline-item-text" id="ag-text-inline_145"><b id="b_146">死亡 (Die)：</b> 使用 <ag-code-inline id="ag-code-inline_147">sawtooth</ag-code-inline>（锯齿波），频率快速下降，模拟撞击后的下坠感。</ag-text-inline></ag-list-item></ag-bullet><ag-h id="ag-h_148" level="1" seq="auto">项目结构</ag-h><ag-text id="ag-text_149">项目源码结构清晰，逻辑分层明确。以下是核心文件的功能说明：</ag-text><ag-code language="Text" caption="项目目录结构" id="ag-code_170_0">
+src/
+├── components/
+│   ├── Game.tsx            # 核心游戏组件：集成了 AI 训练 UI 和多智能体渲染
+│   └── ui/                 # 通用 UI 组件库
+├── constants/
+│   └── gameConfig.ts       # 游戏常量配置
+├── lib/
+│   ├── ai.ts               # AI 核心：包含神经网络 (NeuralNetwork) 与遗传算法 (GeneticModel)
+│   ├── audio.ts            # 音频控制器
+│   └── utils.ts            # 工具函数
+├── App.tsx
+└── main.tsx
+</ag-code><ag-h id="ag-h_151" level="1" seq="auto">开发与构建</ag-h><ag-text id="ag-text_152">本项目基于 Node.js 环境开发。开始前请确保已安装 Node.js (推荐 v18+)。</ag-text><ag-h id="ag-h_153" level="3">1. 安装依赖</ag-h><ag-code id="ag-code_154" language="Bash">
+npm install
+# 或者
+pnpm install
+</ag-code><ag-h id="ag-h_155" level="3">2. 本地运行 (Dev Server)</ag-h><ag-text id="ag-text_156">启动本地开发服务器，支持热更新 (HMR)：</ag-text><ag-code id="ag-code_157" language="Bash">
+npm run dev
+</ag-code><ag-h id="ag-h_158" level="3">3. 生产构建</ag-h><ag-text id="ag-text_159">编译 TypeScript 并打包优化后的生产代码到 <ag-code-inline id="ag-code-inline_160">dist/</ag-code-inline> 目录：</ag-text><ag-code id="ag-code_161" language="Bash">
+npm run build
+</ag-code><ag-text id="ag-text_162">构建完成后，可以使用 <ag-code-inline id="ag-code-inline_163">npm run preview</ag-code-inline> 命令在本地预览生产环境的运行效果。</ag-text></article></root>
